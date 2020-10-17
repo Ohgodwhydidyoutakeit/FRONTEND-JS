@@ -1,5 +1,5 @@
 //1 
-// let max =1 
+let max =1 
 let interval = 3000;
 let how_long = (interval *16);
 let timer = setInterval(()=>{

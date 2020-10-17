@@ -1,12 +1,12 @@
 //1 
 // let max =1 
 let interval = 3000;
-// let how_long = (interval *16);
-// let timer = setInterval(()=>{
-//     console.log(`Cześć po raz ${max}`);
-//     max ++
-// },interval)
-// setTimeout(() => { clearInterval(timer); console.log("Finished!") }, how_long);
+let how_long = (interval *16);
+let timer = setInterval(()=>{
+    console.log(`Cześć po raz ${max}`);
+    max ++
+},interval)
+setTimeout(() => { clearInterval(timer); console.log("Finished!") }, how_long);
 
 
 //2 

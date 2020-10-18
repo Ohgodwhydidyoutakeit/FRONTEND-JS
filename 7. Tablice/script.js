@@ -56,4 +56,57 @@ const func_four = (array) => {
         array.reduce((a, b) => a + b)
     )
 }
-func_four([1,2,3])
+func_four([1, 2, 3])
+
+//5
+const func_five = (array) => {
+    let ave = (array.reduce((a, b) => a + b) / array.length)
+    let new_arr = array.map((x) => x * ave)
+    console.log(new_arr)
+}
+func_five([1, 2, 3])
+//6
+const func_six = (array) => {
+    let even_arr = array.filter((x) => {
+        if (x % 2 == 0) {
+            return x
+        } else {
+            return null
+        }
+    })
+    console.log(even_arr.reduce((a, b) => a + b) / even_arr.length)
+}
+func_six([1, 2, 3, 4])
+
+//7
+const func_sev = (array) => {
+    return array.sort()
+}
+console.log(func_sev([3, 2, 1]))
+
+//8
+const func_eight = (array1, array2) => {
+    // first create new arrays 
+    let index_arrays = [array1.map((a, x) => { return x }), array2.map((a, x) => { return x })];
+    let indexes = [].concat(...index_arrays)
+    return [(indexes.reduce((a, b) => a + b))]
+}
+
+console.log(func_eight([1, 2, 3], [4, 5, 6]))
+//first drops [[0,1,2],[0,1,2]]
+//then creates [0,1,2,0,1,2]
+// then reduces into 6 -- returns array
+
+
+//9
+// reduce array by another array
+const func_nine = (array1, array2) => {
+    return array1.filter(f => !array2.includes(f))
+}
+console.log(func_nine([1, 2, 3, 4], [2, 4]))
+
+//10
+const func_ten = (array) => {
+    return array.map((x) => x * (-1))
+}
+console.log(func_ten([1,2,3]))

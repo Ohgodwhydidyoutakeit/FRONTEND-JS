@@ -42,17 +42,17 @@ function Calculator() {
         console.log(equation);
         this.memory.push(equation)
     };
-    this.subtract = function(a,b){
+    this.subtract = function (a, b) {
         let equation = `${a} - ${b} = ${a - b}`;
         console.log(equation);
         this.memory.push(equation)
     }
-    this.multiply = function(a,b){
+    this.multiply = function (a, b) {
         let equation = `${a} * ${b} = ${a * b}`;
         console.log(equation);
         this.memory.push(equation)
     }
-    this.devide = function(a,b){
+    this.devide = function (a, b) {
         let equation = `${a} / ${b} = ${a / b}`;
         console.log(equation);
         this.memory.push(equation)
@@ -68,7 +68,42 @@ calc_one.clearMemory()
 calc_one.showMemory()
 
 const calc_two = new Calculator();
-calc_two.multiply(5,4)
-calc_two.devide(120,3)
+calc_two.multiply(5, 4)
+calc_two.devide(120, 3)
 calc_two.showMemory()
 
+//3 
+// should be bigger than 5? not by 5
+function Game() {
+    Game.prototype.number = null
+    this.rand = function () {
+      return setInterval(() => {
+            let rand = Math.floor(Math.random() * 10) + 1;
+            game_one.__proto__.number = rand;
+            console.log(this.__proto__.number)
+
+        }, 1000)
+
+
+    }
+    this.check = function () {
+
+       return setInterval(() => {
+            console.log(this.__proto__.number)
+            if (this.__proto__.number >= 5) {
+                console.log('finished')
+                clearInterval(first)
+                clearInterval(second)
+           
+            }
+        }, 1000)
+
+    }
+}
+
+let game_one = new Game();
+let game_two = new Game();
+
+//setup a variable so i can clear them intervals 
+var first = game_one.rand();
+var second = game_two.check()

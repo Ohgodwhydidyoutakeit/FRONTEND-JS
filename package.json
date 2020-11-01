@@ -1,0 +1,20 @@
+{
+  "name": "wsei-javascript-zadania",
+  "version": "1.0.0",
+  "description": "1. Obecność jest obowiązkowa i sprawdzana na początku każdych zajęć, niezależnie o trybu zajęć (stacjonarnie czy zdalnie). Można mieć jedną nieobecność. Jeśli nie było Cię więcej niż 1 raz i chcesz zaliczyć przedmiot - musisz odrobić zajęcia z inną grupą.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ohgodwhydidyoutakeit/FRONTEND-JS.git"
+  },
+  "keywords": [],
+  "author": "Witek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ohgodwhydidyoutakeit/FRONTEND-JS/issues"
+  },
+  "homepage": "https://github.com/Ohgodwhydidyoutakeit/FRONTEND-JS#readme"
+}

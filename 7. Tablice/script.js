@@ -80,9 +80,9 @@ func_six([1, 2, 3, 4])
 
 //7
 const func_sev = (array) => {
-    return array.sort()
+    return array.sort((a,b) => a-b)
 }
-console.log(func_sev([3, 2, 1]))
+console.log( 'aaaaaaa', func_sev([3, 2, 1,32,123]))
 
 //8
 const func_eight = (array1, array2) => {

@@ -70,9 +70,69 @@ const counter = (max) => {
         if (counter == max) {
             this.removeEventListener('click', a);
         }
-
-
     })
 
 }
 counter(10);
+
+// Napisz funkcję która będzie obserwowac scroll strony.
+// Jeśli scroll zjedzie poniżej 200px zmień kolor strony na czerwony.
+// Jeśli będzie powyżej 200px niech zmieni kolor na biały.
+
+window.addEventListener('scroll', (e) => {
+    // got that from stackoverglow 
+    // https://stackoverflow.com/questions/3464876/javascript-get-window-x-y-position-for-scroll
+
+    var top = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
+    if (top >= 200) {
+        document.body.style.backgroundColor = "red"
+    } else {
+        document.body.style.backgroundColor = "white"
+    }
+})
+// Napisz obsługę kalkulatora.
+// Dodaj odpowiednie eventy do przycisków. Wynik wyświetlaj w inpucie.
+// Staraj się aby funkcje były reużywalne.
+
+// zadanie nie jest jasne 
+
+const calc = () => {
+    //select needed elements
+    let input = document.querySelectorAll('#calculator>div:first-of-type>button')
+    let output = document.querySelector('#calculator>input')
+    let actions = document.querySelectorAll('#calculator>:nth-child(6)>button');
+
+    for (const el of input) {
+        el.addEventListener('click', () => {
+            output.value += el.innerHTML
+        })
+    }
+
+
+    // creating functions
+    // we can use single function to take innerHTML/text from inside button and pass it inside
+    // ;)
+    let tempWynik = [];
+    const actionCreators = (object) => {
+        // not a perfect solution, would prefer recursion -- in this case we would have a history too 
+        // get them signs 
+        let ac = object.innerHTML
+        tempWynik.push(output.value, ac)
+        console.log(tempWynik)
+        output.value = null
+        if (tempWynik.length > 3) {
+            output.value = eval(tempWynik.slice(0, -1).join(""))
+        }
+
+    }
+    // akcje
+    for (const element of actions) {
+        element.addEventListener('click', () => {
+            actionCreators(element)
+        })
+    }
+    // adding fuctions to elemenys 
+
+    console.log(actions, typeof actions)
+}
+calc()

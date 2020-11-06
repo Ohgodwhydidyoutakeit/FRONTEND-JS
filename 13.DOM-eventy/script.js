@@ -123,7 +123,6 @@ const calc = () => {
         if (tempWynik.length > 3) {
             output.value = eval(tempWynik.slice(0, -1).join(""))
         }
-
     }
     // akcje
     for (const element of actions) {

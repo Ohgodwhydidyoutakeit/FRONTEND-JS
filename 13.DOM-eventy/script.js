@@ -57,9 +57,22 @@ checkInput();
 // Napisz funkcję countera. Funkcja ma za zadanie wpisywać do spanu w divie id="ex5"
 //numerka odpowiadającego ilości kliknięć w button id="ex5-button". 
 // Jeśli licznik dojdzie do 10 event powinien być usunięty.
+
+
+// WTF NIE MA TAKIEGO BUTTONA 
 const counter = (max) => {
     let counter = 0;
-    document.getElementById('ex5').addEventListener('click', () => {
-        let el = 
+
+    document.getElementById('ex2').addEventListener('click', function a() {
+        let el = document.getElementById('span-ex2')
+        el.innerHTML += `  ${counter} `
+        counter++
+        if (counter == max) {
+            this.removeEventListener('click', a);
+        }
+
+
     })
+
 }
+counter(10);

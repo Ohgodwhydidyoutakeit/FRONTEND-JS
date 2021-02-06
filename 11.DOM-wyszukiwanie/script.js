@@ -32,19 +32,19 @@ Napisz funkcje która będzie wypisywać w konsoli elementy przekazane w paramet
 
 */
 
-const elements = () => {
-let li  = document.getElementsByTagName('li')
-let ul  = document.getElementsByTagName('ul')
-let spanWhole = document.getElementsByTagName('span')
-let spanList = document.querySelectorAll('.list>span')
-let spanSpans = document.querySelectorAll('#spans>span')
-console.log("LI:", li)
-console.log("Ul:", ul)
-console.log("Span:", spanWhole)
-console.log("Span from list:", spanList)
-console.log("Span from spans:", spanSpans)
-
-
-
-}
-elements();
+const showdown = (lis, uls, spans, sid, sids) => {
+    const allLis = document.querySelectorAll(lis);
+    const allUls = document.querySelectorAll(uls);
+    const allSpans = document.querySelectorAll(spans);
+    
+    const spanInDiv = document.querySelectorAll(sid);
+    const spanInDivWID = document.querySelectorAll(sids);
+    
+    allLis.forEach(al => {console.log(al)});
+    allUls.forEach(au => {console.log(au)});
+    allSpans.forEach(as => {console.log(as)});
+    
+    spanInDiv.forEach(sid => {console.log(sid)});
+    spanInDivWID.forEach(sidwid => {console.log(sidwid)});
+    };
+    showdown("li", "ul", "span", "div.list span", "div#spans span");

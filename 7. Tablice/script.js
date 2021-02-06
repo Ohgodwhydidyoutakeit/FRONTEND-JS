@@ -85,14 +85,19 @@ const func_sev = (array) => {
 console.log( 'aaaaaaa', func_sev([3, 2, 1,32,123]))
 
 //8
-const func_eight = (array1, array2) => {
-    // first create new arrays 
-    let index_arrays = [array1.map((a, x) => { return x }), array2.map((a, x) => { return x })];
-    let indexes = [].concat(...index_arrays)
-    return [(indexes.reduce((a, b) => a + b))]
-}
+let exampleArrayA = [7, 6, 3, 4];
+let exampleArrayB = [5, 6, 2, 8];
 
-console.log(func_eight([1, 2, 3], [4, 5, 6]))
+function sumOfArraysIndex(arrayA, arrayB){
+    let array = [];
+    arrayA.forEach((num, i) =>{
+        array.push(num + arrayB[i]);
+    });
+    return array;
+}
+console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+console.log(sumOfArraysIndex(exampleArrayA, exampleArrayB));
+
 //first drops [[0,1,2],[0,1,2]]
 //then creates [0,1,2,0,1,2]
 // then reduces into 6 -- returns array

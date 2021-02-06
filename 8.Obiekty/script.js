@@ -41,7 +41,7 @@ let car_5 ={
         size:15
     }
 }
-console.log(car_5)
+console.log(car_5.wheels)
 
 //6
 let car_6 = {

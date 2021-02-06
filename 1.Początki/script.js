@@ -4,5 +4,5 @@ console.log(52/16)
 console.log(5*2)
 
 console.log("Hello World");
-console.log(Hello World); 
+// console.log(Hello World);  comment bo rzuca error
 console.log("Hello World");

@@ -91,3 +91,40 @@ const mainDiv = document.getElementById('ex6');
 let one1 = mainDiv.firstElementChild.firstElementChild.firstElementChild;
 let two2 = mainDiv.firstElementChild.parentElement.firstElementChild.firstElementChild.nextElementSibling.parentElement;
 let three3 = mainDiv.parentElement.firstElementChild.parentElement.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.firstElementChild;
+
+
+
+const calc = () => {
+    let input = document.querySelectorAll('#calculator>div:first-of-type>button');
+    let output = document.querySelector('#calculator>input');
+    let actions = document.querySelectorAll('#calculator>:nth-child(5)>button');
+    
+    for(const el of input){
+        el.addEventListener('click', ()=> {
+            output.value +=el.innerHTML;
+        })
+    }
+    
+    let tempWynik = [];
+    
+    const actionCreators = (object)=>{
+        let ac = object.innnerHTML;
+        tempWynik.push(output.value,ac)
+        output.value=null
+        if(tempWynik.length >3){
+            output.value = eval(tempWynik.slice(0,-1).join(""))
+        }
+    }
+    
+    for(const element of actions){
+        element.addEventListener('click', ()=>{
+            actionCreators(element)
+           
+        })
+    }
+    // console.log(actions,typeof actions)
+    
+    
+}
+
+calc();
